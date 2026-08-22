@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 
 export default function ThankYouSection() {
   return (
@@ -22,7 +22,7 @@ export default function ThankYouSection() {
         </div>
       </section>
 
-      <footer className="site-footer">
+      {/* <footer className="site-footer">
         <a
           href="https://www.instagram.com/awesome__creation/"
           target="_blank"
@@ -46,7 +46,7 @@ export default function ThankYouSection() {
           <span>@awesome__creation</span>
         </a>
         <p className="footer-sub">Connect For Your Digital Invitation</p>
-      </footer>
+      </footer> */}
     </>
   );
 }
