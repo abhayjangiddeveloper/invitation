@@ -1,6 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
+import { CARD_INFO } from "@/utils/constant";
+import moment from "moment";
+import React from "react";
 
 export default function EventsSection() {
   return (
@@ -18,7 +20,10 @@ export default function EventsSection() {
             alt="Masjid-e-Ilahi"
             className="event-image"
           />
-          <h3 className="event-date-text">Friday, 18th September 2026</h3>
+
+          <h3 className="event-date-text">
+            {moment(CARD_INFO.nikahDate).format("dddd, DD MMMM YYYY")}
+          </h3>
           <p className="event-time-text">⏰ After Namaz-e-Asar</p>
           <p className="event-venue-name">📍 Masjid-e-Ilahi</p>
           <p className="event-address">Shobha Nagar, Nanded</p>
@@ -41,7 +46,10 @@ export default function EventsSection() {
             alt="Prince Lawns Function Hall"
             className="event-image"
           />
-          <h3 className="event-date-text">Friday, 18th September 2026</h3>
+          <h3 className="event-date-text">
+            {" "}
+            {moment(CARD_INFO.nikahDate).format("dddd, DD MMMM YYYY")}
+          </h3>
           <p className="event-time-text">⏰ 8:00 PM</p>
           <p className="event-venue-name">📍 Prince Lawns Function Hall</p>
           <p className="event-address">Maltekdi, Opp. Fruit Market, Nanded</p>

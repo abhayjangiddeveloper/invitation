@@ -161,6 +161,7 @@ body {
     transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
     visibility 1.2s;
   pointer-events: none;
+  margin-top: 150px;
 }
 
 .hero-content.revealed {

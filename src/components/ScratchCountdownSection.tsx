@@ -1,7 +1,10 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import confetti from 'canvas-confetti';
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import confetti from "canvas-confetti";
+import { CardSimIcon } from "lucide-react";
+import { CARD_INFO } from "@/utils/constant";
+import moment from "moment";
 
 interface HeartItem {
   id: string;
@@ -10,9 +13,13 @@ interface HeartItem {
 }
 
 const hearts: HeartItem[] = [
-  { id: 'heart-1', text: '18th' },
-  { id: 'heart-2', text: 'September', isLong: true },
-  { id: 'heart-3', text: '2026' },
+  { id: "heart-1", text: moment(CARD_INFO.nikahDate).format("DD") },
+  {
+    id: "heart-2",
+    text: moment(CARD_INFO.nikahDate).format("MMMM"),
+    isLong: true,
+  },
+  { id: "heart-3", text: moment(CARD_INFO.nikahDate).format("YYYY") },
 ];
 
 export default function ScratchCountdownSection() {
@@ -34,7 +41,7 @@ export default function ScratchCountdownSection() {
         particleCount: 80,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#e5a0ae', '#ff758c', '#ffd700', '#ffffff'],
+        colors: ["#e5a0ae", "#ff758c", "#ffd700", "#ffffff"],
       });
     } catch {
       // ignore
@@ -46,11 +53,11 @@ export default function ScratchCountdownSection() {
     hearts.forEach((h) => {
       const canvas = canvasRefs.current[h.id];
       if (canvas) {
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext("2d");
         if (ctx) {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
-        canvas.style.display = 'none';
+        canvas.style.display = "none";
       }
     });
     triggerConfetti();
@@ -67,28 +74,37 @@ export default function ScratchCountdownSection() {
       canvas.width = (rect.width || 115) * dpr;
       canvas.height = (rect.height || 115) * dpr;
 
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
       ctx.scale(dpr, dpr);
 
       // Create shimmering gold/silver gradient for scratch surface
-      const gradient = ctx.createLinearGradient(0, 0, rect.width || 115, rect.height || 115);
-      gradient.addColorStop(0, '#c7a365');
-      gradient.addColorStop(0.3, '#ebd49d');
-      gradient.addColorStop(0.5, '#fff6d6');
-      gradient.addColorStop(0.7, '#d4af37');
-      gradient.addColorStop(1, '#997a38');
+      const gradient = ctx.createLinearGradient(
+        0,
+        0,
+        rect.width || 115,
+        rect.height || 115,
+      );
+      gradient.addColorStop(0, "#c7a365");
+      gradient.addColorStop(0.3, "#ebd49d");
+      gradient.addColorStop(0.5, "#fff6d6");
+      gradient.addColorStop(0.7, "#d4af37");
+      gradient.addColorStop(1, "#997a38");
 
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, rect.width || 115, rect.height || 115);
 
       // Draw subtle scratch hint text or icon
-      ctx.fillStyle = 'rgba(100, 70, 20, 0.45)';
-      ctx.font = 'bold 12px Montserrat, sans-serif';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText('SCRATCH', (rect.width || 115) / 2, (rect.height || 115) / 2);
+      ctx.fillStyle = "rgba(100, 70, 20, 0.45)";
+      ctx.font = "bold 12px Montserrat, sans-serif";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(
+        "SCRATCH",
+        (rect.width || 115) / 2,
+        (rect.height || 115) / 2,
+      );
     });
   }, []);
 
@@ -96,14 +112,14 @@ export default function ScratchCountdownSection() {
     const canvas = canvasRefs.current[id];
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     const rect = canvas.getBoundingClientRect();
     const x = clientX - rect.left;
     const y = clientY - rect.top;
 
-    ctx.globalCompositeOperation = 'destination-out';
+    ctx.globalCompositeOperation = "destination-out";
     ctx.beginPath();
     ctx.arc(x, y, 16, 0, Math.PI * 2, false);
     ctx.fill();
@@ -114,9 +130,8 @@ export default function ScratchCountdownSection() {
     }
   };
 
-  // Countdown timer to September 18, 2026 16:30:00
   useEffect(() => {
-    const targetDate = new Date('2026-09-18T16:30:00').getTime();
+    const targetDate = new Date(CARD_INFO.nikahDate).getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();
@@ -124,8 +139,12 @@ export default function ScratchCountdownSection() {
 
       if (difference > 0) {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const hours = Math.floor(
+          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor(
+          (difference % (1000 * 60 * 60)) / (1000 * 60),
+        );
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
         setTimeLeft({ days, hours, minutes, seconds });
@@ -143,7 +162,7 @@ export default function ScratchCountdownSection() {
   return (
     <section className="scratch-section" id="scratchSection">
       {/* SVG Heart Clip definition */}
-      <svg width="0" height="0" style={{ position: 'absolute' }}>
+      <svg width="0" height="0" style={{ position: "absolute" }}>
         <defs>
           <clipPath id="heart-clip" clipPathUnits="objectBoundingBox">
             <path d="M 0.5, 0.85 C 0.5, 0.85 0.08, 0.58 0.02, 0.35 C -0.05, 0.12 0.12, 0.0 0.32, 0.0 C 0.43, 0.0 0.48, 0.07 0.5, 0.14 C 0.52, 0.07 0.57, 0.0 0.68, 0.0 C 0.88, 0.0 1.05, 0.12 0.98, 0.35 C 0.92, 0.58 0.5, 0.85 0.5, 0.85 Z" />
@@ -159,7 +178,9 @@ export default function ScratchCountdownSection() {
             <div key={h.id} className="heart-scratch-card">
               <div className="heart-border">
                 <div className="heart-shape">
-                  <span className={`scratch-date ${h.isLong ? 'long-title' : ''}`}>
+                  <span
+                    className={`scratch-date ${h.isLong ? "long-title" : ""}`}
+                  >
                     {h.text}
                   </span>
                   <canvas
@@ -197,14 +218,14 @@ export default function ScratchCountdownSection() {
             disabled={isRevealed}
           >
             <span className="btn-icon">✨</span>
-            <span>{isRevealed ? 'Date Revealed' : 'Reveal Date'}</span>
+            <span>{isRevealed ? "Date Revealed" : "Reveal Date"}</span>
           </button>
         </div>
 
         {/* Revealed Countdown Section */}
-        <div className={`hidden-countdown ${isRevealed ? 'show' : ''}`}>
+        <div className={`hidden-countdown ${isRevealed ? "show" : ""}`}>
           <div className="save-the-date-label">Save the date</div>
-          <div className="wedding-date-highlight">18 . 09 . 2026</div>
+          <div className="wedding-date-highlight">{`${moment(CARD_INFO.nikahDate).format("DD.MM.YYYY")}`}</div>
 
           <div className="timer-container">
             <div className="time-block">

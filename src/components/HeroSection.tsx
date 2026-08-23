@@ -68,7 +68,6 @@ export default function HeroSection({ isOpen = false }: HeroSectionProps) {
         <span className="hero-ampersand">&amp;</span>
         <h1 className="hero-names-cursive">{CARD_INFO.brideName}</h1>
 
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/assets/ring1-Zb6HDysx.png"
           alt="Wedding Rings"
