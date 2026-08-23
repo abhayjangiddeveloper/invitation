@@ -3,9 +3,6 @@ import "./globals.css";
 import { CARD_INFO } from "@/utils/constant";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    "https://syedsaimatasneem-syednizamuddin-wedding.vercel.app",
-  ),
   title: `${CARD_INFO.brideName} & ${CARD_INFO.groomName} | Wedding Invitation`,
   description: `With the blessings of Almighty Allah, we cordially invite you to celebrate the Nikah & Valima ceremony of ${CARD_INFO.brideName} & ${CARD_INFO.groomName}.`,
   authors: [{ name: "Awesome Creation" }],
@@ -20,7 +17,7 @@ export const metadata: Metadata = {
     description: `With joy in our hearts, we cordially invite you to celebrate our Nikah & Valima of ${CARD_INFO.brideName} & ${CARD_INFO.groomName}.`,
     images: [
       {
-        url: "/og-cover.jpg",
+        url: "/og-cover-update.jpg",
         width: 1200,
         height: 630,
         alt: `${CARD_INFO.brideName} & ${CARD_INFO.groomName} | Wedding Invitation`,
@@ -31,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${CARD_INFO.brideName} & ${CARD_INFO.groomName} | Wedding Invitation`,
     description: `With joy in our hearts, we cordially invite you to celebrate our Nikah & Valima of ${CARD_INFO.brideName} & ${CARD_INFO.groomName}.`,
-    images: ["/og-cover.jpg"],
+    images: ["/og-cover-update.jpg"],
   },
 };
 
