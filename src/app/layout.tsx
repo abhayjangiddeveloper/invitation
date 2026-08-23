@@ -1,6 +1,7 @@
-import type { Metadata, Viewport } from "next";
-import "./globals.css";
 import { CARD_INFO } from "@/utils/constant";
+import type { Metadata, Viewport } from "next";
+import { ReactNode } from "react";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: `${CARD_INFO.brideName} & ${CARD_INFO.groomName} | Wedding Invitation`,
@@ -40,11 +41,7 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
