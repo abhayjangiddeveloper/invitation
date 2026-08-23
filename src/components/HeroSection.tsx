@@ -1,5 +1,6 @@
 "use client";
 
+import { CARD_INFO } from "@/utils/constant";
 import React from "react";
 
 export default function HeroSection() {
@@ -28,9 +29,9 @@ export default function HeroSection() {
       </div>
 
       <div className="hero-content">
-        <h1 className="hero-names-cursive">Syed Saima Tasneem</h1>
+        <h1 className="hero-names-cursive">{CARD_INFO.brideName}</h1>
         <span className="hero-ampersand">&amp;</span>
-        <h1 className="hero-names-cursive">Syed Nizamuddin</h1>
+        <h1 className="hero-names-cursive">{CARD_INFO.groomName}</h1>
 
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
