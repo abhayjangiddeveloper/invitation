@@ -3,7 +3,26 @@
 import { CARD_INFO } from "@/utils/constant";
 import React from "react";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  isOpen?: boolean;
+}
+
+export default function HeroSection({ isOpen = false }: HeroSectionProps) {
+  const videoRef = React.useRef<HTMLVideoElement | null>(null);
+
+  React.useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (isOpen) {
+      video.play().catch((err) => {
+        console.warn("Video playback error:", err);
+      });
+    } else {
+      video.pause();
+    }
+  }, [isOpen]);
+
   const scrollToDetails = (e: React.MouseEvent) => {
     e.preventDefault();
     const target = document.getElementById("detailsSection");
@@ -16,7 +35,7 @@ export default function HeroSection() {
     <section className="hero-section" id="heroSection">
       <div className="hero-bg-container">
         <video
-          autoPlay
+          ref={videoRef}
           muted
           playsInline
           className="hero-bg-image hero-bg-video"
@@ -29,9 +48,9 @@ export default function HeroSection() {
       </div>
 
       <div className="hero-content">
-        <h1 className="hero-names-cursive">{CARD_INFO.brideName}</h1>
-        <span className="hero-ampersand">&amp;</span>
         <h1 className="hero-names-cursive">{CARD_INFO.groomName}</h1>
+        <span className="hero-ampersand">&amp;</span>
+        <h1 className="hero-names-cursive">{CARD_INFO.brideName}</h1>
 
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

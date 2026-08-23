@@ -23,6 +23,20 @@ export default function DetailsSection() {
           Nikah &amp; Valima ceremony of
         </p>
 
+        {/* Groom Card */}
+        <div className="person-card">
+          <div className="card-role-label">The Groom</div>
+          <h2 className="person-name">{CARD_INFO.groomName}</h2>
+          <div className="person-degree">B.Com. (Computers), KSA</div>
+          <div className="person-parent-divider" />
+          <div className="parent-title-label">Son of</div>
+          <div className="parent-name">Mrs. &amp; Mr. Syed Azam Sahab</div>
+          <div className="parent-qualification">M.Tech. (Structures)</div>
+        </div>
+
+        {/* Decorative Ampersand */}
+        <div className="card-ampersand-divider">&amp;</div>
+
         {/* Bride Card */}
         <div className="person-card">
           <div className="card-role-label">The Bride</div>
@@ -35,20 +49,6 @@ export default function DetailsSection() {
           <div className="parent-designation">
             Class I Officer, Education Department, Nanded
           </div>
-        </div>
-
-        {/* Decorative Ampersand */}
-        <div className="card-ampersand-divider">&amp;</div>
-
-        {/* Groom Card */}
-        <div className="person-card">
-          <div className="card-role-label">The Groom</div>
-          <h2 className="person-name">{CARD_INFO.groomName}</h2>
-          <div className="person-degree">B.Com. (Computers), KSA</div>
-          <div className="person-parent-divider" />
-          <div className="parent-title-label">Son of</div>
-          <div className="parent-name">Mrs. &amp; Mr. Syed Azam Sahab</div>
-          <div className="parent-qualification">M.Tech. (Structures)</div>
         </div>
 
         {/* Hadith Section */}

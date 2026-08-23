@@ -73,7 +73,7 @@ export default function WeddingInvitationPage() {
       <MusicPlayer isPlaying={isPlaying} onToggle={toggleMusic} />
 
       {/* Sections */}
-      <HeroSection />
+      <HeroSection isOpen={isOpened} />
       <DetailsSection />
       <ScratchCountdownSection />
       <EventsSection />
