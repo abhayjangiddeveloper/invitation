@@ -1,16 +1,30 @@
 "use client";
 
 import { CARD_INFO } from "@/utils/constant";
-import React from "react";
+import { MouseEvent, useEffect, useRef, useState } from "react";
 
 interface HeroSectionProps {
   isOpen?: boolean;
 }
 
 export default function HeroSection({ isOpen = false }: HeroSectionProps) {
-  const videoRef = React.useRef<HTMLVideoElement | null>(null);
+  // Hooks
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  React.useEffect(() => {
+  // Local States
+  const [isVideoEnded, setIsVideoEnded] = useState(false);
+
+  // Functions
+  const scrollToDetails = (e: MouseEvent) => {
+    e.preventDefault();
+    const target = document.getElementById("detailsSection");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // Effects
+  useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
@@ -20,16 +34,18 @@ export default function HeroSection({ isOpen = false }: HeroSectionProps) {
       });
     } else {
       video.pause();
+      video.currentTime = 0;
+      setIsVideoEnded(false);
     }
   }, [isOpen]);
 
-  const scrollToDetails = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const target = document.getElementById("detailsSection");
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => {
+        setIsVideoEnded(true);
+      }, 4000);
     }
-  };
+  }, [isOpen]);
 
   return (
     <section className="hero-section" id="heroSection">
@@ -47,7 +63,7 @@ export default function HeroSection({ isOpen = false }: HeroSectionProps) {
         <div className="hero-vignette" />
       </div>
 
-      <div className="hero-content">
+      <div className={`hero-content ${isVideoEnded ? "revealed" : ""}`}>
         <h1 className="hero-names-cursive">{CARD_INFO.groomName}</h1>
         <span className="hero-ampersand">&amp;</span>
         <h1 className="hero-names-cursive">{CARD_INFO.brideName}</h1>
@@ -63,7 +79,7 @@ export default function HeroSection({ isOpen = false }: HeroSectionProps) {
       <a
         href="#detailsSection"
         onClick={scrollToDetails}
-        className="scroll-down-box"
+        className={`scroll-down-box ${isVideoEnded ? "revealed" : ""}`}
         id="scrollDownBtn"
       >
         <span>Scroll Down</span>
