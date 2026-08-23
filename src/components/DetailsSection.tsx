@@ -12,7 +12,7 @@ export default function DetailsSection() {
           بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
         </div>
         <div className="bismillah-english">
-          In the name of Allah, the Most Gracious, the Most Merciful
+          {"In the name of Allah, \nthe Most Gracious, the Most Merciful"}
         </div>
 
         <p className="invite-intro">
@@ -27,45 +27,55 @@ export default function DetailsSection() {
         <div className="person-card">
           <div className="card-role-label">The Groom</div>
           <h2 className="person-name">{CARD_INFO.groomName}</h2>
-          <div className="person-degree">B.Com. (Computers), KSA</div>
+          {/* <div className="person-degree">B.Com. (Computers), KSA</div> */}
           <div className="person-parent-divider" />
           <div className="parent-title-label">Son of</div>
-          <div className="parent-name">Mrs. &amp; Mr. Syed Azam Sahab</div>
-          <div className="parent-qualification">M.Tech. (Structures)</div>
+          <div className="parent-name">Mrs. & Mr. {CARD_INFO.groomFather}</div>
+          {/* <div className="parent-qualification">M.Tech. (Structures)</div> */}
         </div>
 
         {/* Decorative Ampersand */}
-        <div className="card-ampersand-divider">&amp;</div>
+        {/* <div className="card-ampersand-divider">&amp;</div> */}
+        <div className="divider">
+          <div className="divider-line"></div>
+
+          <span className="divider-symbol">&amp;</span>
+
+          <div className="divider-line"></div>
+        </div>
 
         {/* Bride Card */}
         <div className="person-card">
           <div className="card-role-label">The Bride</div>
           <h2 className="person-name">{CARD_INFO.brideName}</h2>
-          <div className="person-degree">M.A</div>
+          {/* <div className="person-degree">M.A</div> */}
           <div className="person-parent-divider" />
           <div className="parent-title-label">Daughter of</div>
-          <div className="parent-name">Mrs. &amp; Mr. Dr. Syed Shaker Arif</div>
-          <div className="parent-qualification">M.A., M.Ed., SET, Ph.D.</div>
-          <div className="parent-designation">
+          <div className="parent-name">Mrs. & Mr. {CARD_INFO.brideFather}</div>
+          {/* <div className="parent-qualification">M.A., M.Ed., SET, Ph.D.</div> */}
+          {/* <div className="parent-designation">
             Class I Officer, Education Department, Nanded
-          </div>
+          </div> */}
         </div>
 
         {/* Hadith Section */}
         <div className="hadith-card">
-          <div className="hadith-arabic">
+          <p className="arabic-text">
             عَنِ ابْنِ عَبَّاسٍ قَالَ: قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ
             عَلَيْهِ وَسَلَّمَ:
-            <br />
-            &quot; لَمْ نَرَ لِلْمُتَحَابَّيْنِ مِثْلَ النِّكَاحِ &quot;
-          </div>
-          <div className="hadith-english">
+            <br />" لَمْ نَرَ لِلْمُتَحَابَّيْنِ مِثْلَ النِّكَاحِ "
+          </p>
+
+          <p className="translation">
             It was narrated from Ibn Abbas that the Messenger of Allah (ﷺ) said:
-          </div>
-          <div className="hadith-quote">
-            &quot;There is nothing like marriage, for two people who love one
-            another.&quot;
-          </div>
+            <br />
+            <span className="quote">
+              "There is nothing like marriage, for two people who love one
+              another."
+            </span>
+          </p>
+
+          <p className="reference">— Sunan Ibn Majah 1847</p>
         </div>
       </div>
     </section>
