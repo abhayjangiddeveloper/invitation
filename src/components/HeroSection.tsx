@@ -43,7 +43,7 @@ export default function HeroSection({ isOpen = false }: HeroSectionProps) {
     if (isOpen) {
       setTimeout(() => {
         setIsVideoEnded(true);
-      }, 4000);
+      }, 3250);
     }
   }, [isOpen]);
 
