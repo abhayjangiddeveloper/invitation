@@ -23,6 +23,16 @@ export default function HeroSection({ isOpen = false }: HeroSectionProps) {
     }
   };
 
+  const handleTimeUpdate = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Trigger reveal when video reaches 3.25 seconds (3250ms) or finishes
+    if (video.currentTime >= 3.25 || video.ended) {
+      setIsVideoEnded(true);
+    }
+  };
+
   // Effects
   useEffect(() => {
     const video = videoRef.current;
@@ -39,14 +49,6 @@ export default function HeroSection({ isOpen = false }: HeroSectionProps) {
     }
   }, [isOpen]);
 
-  useEffect(() => {
-    if (isOpen) {
-      setTimeout(() => {
-        setIsVideoEnded(true);
-      }, 3250);
-    }
-  }, [isOpen]);
-
   return (
     <section className="hero-section" id="heroSection">
       <div className="hero-bg-container">
@@ -54,6 +56,8 @@ export default function HeroSection({ isOpen = false }: HeroSectionProps) {
           ref={videoRef}
           muted
           playsInline
+          onTimeUpdate={handleTimeUpdate}
+          onEnded={() => setIsVideoEnded(true)}
           className="hero-bg-image hero-bg-video"
           poster="/assets/bg-CjJQzhxh.jpg"
         >
