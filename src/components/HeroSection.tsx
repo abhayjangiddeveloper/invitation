@@ -1,26 +1,29 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
 
 export default function HeroSection() {
   const scrollToDetails = (e: React.MouseEvent) => {
     e.preventDefault();
-    const target = document.getElementById('detailsSection');
+    const target = document.getElementById("detailsSection");
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+      target.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <section className="hero-section" id="heroSection">
       <div className="hero-bg-container">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/assets/bg-CjJQzhxh.jpg"
-          alt="Wedding Background"
-          className="hero-bg-image"
-        />
+        <video
+          autoPlay
+          muted
+          playsInline
+          className="hero-bg-image hero-bg-video"
+          poster="/assets/bg-CjJQzhxh.jpg"
+        >
+          <source src="/assets/curtain-video1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="hero-vignette" />
       </div>
 
