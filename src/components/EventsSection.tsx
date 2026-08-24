@@ -11,9 +11,9 @@ export default function EventsSection() {
       <h2 className="section-main-heading">Events &amp; Venues</h2>
 
       <div className="event-cards-container">
-        {/* Card 1: Nikah Ceremony */}
+        {/* Card 1: Flower Carnival */}
         <div className="event-card">
-          <div className="event-badge">🕌 Nikah Ceremony</div>
+          <div className="event-badge"> 🌷 Flower Carnival</div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/assets/masjid-CpSqpTFh.png"
@@ -22,25 +22,27 @@ export default function EventsSection() {
           />
 
           <h3 className="event-date-text">
-            {moment(CARD_INFO.nikahDate).format("dddd, DD MMMM YYYY")}
+            {moment(CARD_INFO.flowerCarnivalDate).format("dddd, DD MMMM YYYY")}
           </h3>
-          <p className="event-time-text">⏰ After Namaz-e-Asar</p>
-          <p className="event-venue-name">📍 Masjid-e-Ilahi</p>
-          <p className="event-address">Shobha Nagar, Nanded</p>
-          <a
+          <p className="event-time-text">
+            ⏰ After {CARD_INFO?.flowerCarnivalTime}
+          </p>
+          <p className="event-venue-name">📍 {CARD_INFO?.resortLocation}</p>
+          <p className="event-address">{CARD_INFO?.resortLandmark}</p>
+          {/* <a
             href="https://www.google.com/maps/search/?api=1&query=Masjid-e-Ilahi+Shobha+Nagar+Nanded"
             target="_blank"
             rel="noopener noreferrer"
             className="map-btn"
           >
             <span>📍 View Location on Google Maps</span>
-          </a>
+          </a> */}
         </div>
 
-        {/* Card 2: Nikah Dinner */}
+        {/* Card 2: Barat */}
         <div className="event-card">
-          <div className="event-badge light">☕ Nikah Dinner</div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <div className="event-badge light">🎠 Barat Departure</div>
+
           <img
             src="/assets/venue-DNGKp-8E.png"
             alt="Prince Lawns Function Hall"
@@ -48,11 +50,49 @@ export default function EventsSection() {
           />
           <h3 className="event-date-text">
             {" "}
-            {moment(CARD_INFO.nikahDate).format("dddd, DD MMMM YYYY")}
+            {moment(CARD_INFO.baratDepartureDate).format("dddd, DD MMMM YYYY")}
           </h3>
-          <p className="event-time-text">⏰ 8:00 PM</p>
-          <p className="event-venue-name">📍 Prince Lawns Function Hall</p>
-          <p className="event-address">Maltekdi, Opp. Fruit Market, Nanded</p>
+          <p className="event-time-text">⏰ {CARD_INFO?.baratDepartureTime}</p>
+          <p className="event-address">
+            Note: Barat goes to Janab {CARD_INFO.brideFather} Bagor (Bhilwara)
+          </p>
+        </div>
+
+        {/* Card 3: Nikah */}
+        <div className="event-card dashed-border">
+          <div className="event-badge light">🕌 ✦ Nikah ✦</div>
+          <h3 className="event-date-text">
+            {moment(CARD_INFO.baratDepartureDate).format("dddd, DD MMMM YYYY")}
+          </h3>
+          <p className="event-time-text">⏰ 9:00 PM</p>
+          <p className="event-venue-name">📍 At Bagor</p>
+          {/* <p className="event-address">Bodhan Road, Nizamabad</p> */}
+        </div>
+
+        {/* Card 4: Mayra */}
+        <div className="event-card dashed-border">
+          <div className="event-badge light">👗 ✦ Mayra ✦</div>
+          <h3 className="event-date-text">
+            {moment(CARD_INFO.mayraDate).format("dddd, DD MMMM YYYY")}
+          </h3>
+          <p className="event-time-text">⏰ {CARD_INFO?.mayraTime}</p>
+          <p className="event-venue-name">📍 {CARD_INFO?.resortLocation}</p>
+          <p className="event-address">{CARD_INFO?.resortLandmark}</p>
+        </div>
+
+        {/* Card 5: Reception & Dinner */}
+        <div className="event-card dashed-border">
+          <div className="event-badge light">🍱 ✦ Reception & Dinner ✦</div>
+          <h3 className="event-date-text">
+            {moment(CARD_INFO.receptionAndDinnerDate).format(
+              "dddd, DD MMMM YYYY",
+            )}
+          </h3>
+          <p className="event-time-text">
+            ⏰ {CARD_INFO?.receptionAndDinnerTime}
+          </p>
+          <p className="event-venue-name">📍 {CARD_INFO?.resortLocation}</p>
+          <p className="event-address">{CARD_INFO?.resortLandmark}</p>
           <a
             href="https://www.google.com/maps/search/?api=1&query=Prince+Lawns+Function+Hall+Maltekdi+Nanded"
             target="_blank"
@@ -61,15 +101,6 @@ export default function EventsSection() {
           >
             <span>📍 View Location on Google Maps</span>
           </a>
-        </div>
-
-        {/* Card 3: Valima Dinner */}
-        <div className="event-card dashed-border">
-          <div className="event-badge light">👑 ✦ Valima Dinner ✦</div>
-          <h3 className="event-date-text">Sunday, 20th September 2026</h3>
-          <p className="event-time-text">⏰ 9:00 PM</p>
-          <p className="event-venue-name">📍 Nizam Palace Function Hall</p>
-          <p className="event-address">Bodhan Road, Nizamabad</p>
         </div>
       </div>
     </section>

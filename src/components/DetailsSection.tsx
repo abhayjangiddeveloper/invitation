@@ -30,7 +30,9 @@ export default function DetailsSection() {
           {/* <div className="person-degree">B.Com. (Computers), KSA</div> */}
           <div className="person-parent-divider" />
           <div className="parent-title-label">Son of</div>
-          <div className="parent-name">Mr. & Mrs. {CARD_INFO.groomFather}</div>
+          <div className="parent-name">
+            Mrs. {CARD_INFO.groomMother} &amp; Mr. {CARD_INFO.groomFather}
+          </div>
           {/* <div className="parent-qualification">M.Tech. (Structures)</div> */}
         </div>
 
@@ -51,7 +53,9 @@ export default function DetailsSection() {
           {/* <div className="person-degree">M.A</div> */}
           <div className="person-parent-divider" />
           <div className="parent-title-label">Daughter of</div>
-          <div className="parent-name">Mr. & Mrs. {CARD_INFO.brideFather}</div>
+          <div className="parent-name">
+            Mrs. {CARD_INFO.brideMother} &amp; Mr. {CARD_INFO.brideFather}
+          </div>
           {/* <div className="parent-qualification">M.A., M.Ed., SET, Ph.D.</div> */}
           {/* <div className="parent-designation">
             Class I Officer, Education Department, Nanded

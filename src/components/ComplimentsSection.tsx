@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 
 interface FamilyMember {
   name: string;
@@ -9,27 +9,13 @@ interface FamilyMember {
 
 const familyMembers: FamilyMember[] = [
   {
-    name: 'Syed Zaker Arif',
-    role: 'ADVOCATE, M.A. LL.B., NANDED',
+    name: "Fakahruddin Quazi & Shamshad Begum",
   },
   {
-    name: 'Syed Sajid Arif',
-    role: 'DISTRICT JUDGE, LATUR',
+    name: "Mominuddin Quazi & Parveen Begum",
   },
   {
-    name: 'Syed Aqib',
-  },
-  {
-    name: 'Syed Atif',
-  },
-  {
-    name: 'Syed Farhan',
-  },
-  {
-    name: 'Shaikh Aslam',
-  },
-  {
-    name: 'Shaikh Khurram',
+    name: "Aadil Quazi, all Quazi Family Sawar, all relatives & friends",
   },
 ];
 
@@ -49,7 +35,9 @@ export default function ComplimentsSection() {
           <div key={member.name} className="comp-member">
             <h3 className="comp-name">{member.name}</h3>
             {member.role && <p className="comp-role">{member.role}</p>}
-            {index < familyMembers.length - 1 && <div className="comp-divider" />}
+            {index < familyMembers.length - 1 && (
+              <div className="comp-divider" />
+            )}
           </div>
         ))}
       </div>
