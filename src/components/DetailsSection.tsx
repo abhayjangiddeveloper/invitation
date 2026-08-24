@@ -15,13 +15,13 @@ export default function DetailsSection() {
           {"In the name of Allah, \nthe Most Gracious, the Most Merciful"}
         </div>
 
-        <p className="invite-intro">
+        {/* <p className="invite-intro">
           With the blessings of Almighty Allah,
           <br />
           Together with their families, we cordially invite you to celebrate the
           <br />
           Nikah &amp; Valima ceremony of
-        </p>
+        </p> */}
 
         {/* Groom Card */}
         <div className="person-card">

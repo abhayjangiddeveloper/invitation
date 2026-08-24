@@ -31,6 +31,7 @@ export default function WeddingInvitationPage() {
   }, []);
 
   const handleOpen = () => {
+    window.scrollTo({ top: 0, behavior: "instant" });
     setIsOpened(true);
     if (audioRef.current) {
       audioRef.current
