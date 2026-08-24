@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import React, { useState, useRef, useEffect } from 'react';
-import IntroOverlay from '@/components/IntroOverlay';
-import MusicPlayer from '@/components/MusicPlayer';
-import HeartClickEffect from '@/components/HeartClickEffect';
-import HeroSection from '@/components/HeroSection';
-import DetailsSection from '@/components/DetailsSection';
-import ScratchCountdownSection from '@/components/ScratchCountdownSection';
-import EventsSection from '@/components/EventsSection';
-import RSVPSection from '@/components/RSVPSection';
-import ComplimentsSection from '@/components/ComplimentsSection';
-import ThankYouSection from '@/components/ThankYouSection';
+import React, { useState, useRef, useEffect } from "react";
+import IntroOverlay from "@/components/IntroOverlay";
+import MusicPlayer from "@/components/MusicPlayer";
+import HeartClickEffect from "@/components/HeartClickEffect";
+import HeroSection from "@/components/HeroSection";
+import DetailsSection from "@/components/DetailsSection";
+import ScratchCountdownSection from "@/components/ScratchCountdownSection";
+import EventsSection from "@/components/EventsSection";
+import RSVPSection from "@/components/RSVPSection";
+import ComplimentsSection from "@/components/ComplimentsSection";
+import ThankYouSection from "@/components/ThankYouSection";
 
 export default function WeddingInvitationPage() {
   const [isOpened, setIsOpened] = useState(false);
@@ -19,9 +19,9 @@ export default function WeddingInvitationPage() {
 
   useEffect(() => {
     // Create background audio instance
-    const audio = new Audio('/media/music2.mp3');
+    const audio = new Audio("/media/music2.mp3");
     audio.loop = true;
-    audio.preload = 'auto';
+    audio.preload = "auto";
     audioRef.current = audio;
 
     return () => {
@@ -39,7 +39,7 @@ export default function WeddingInvitationPage() {
           setIsPlaying(true);
         })
         .catch((err) => {
-          console.warn('Audio auto-play prevented:', err);
+          console.warn("Audio auto-play prevented:", err);
         });
     }
   };
@@ -56,13 +56,13 @@ export default function WeddingInvitationPage() {
           setIsPlaying(true);
         })
         .catch((err) => {
-          console.warn('Audio playback error:', err);
+          console.warn("Audio playback error:", err);
         });
     }
   };
 
   return (
-    <main style={{ minHeight: '100vh', position: 'relative' }}>
+    <main style={{ minHeight: "100vh", position: "relative" }}>
       {/* Intro Curtain Overlay */}
       <IntroOverlay isOpen={isOpened} onOpen={handleOpen} />
 
@@ -77,9 +77,11 @@ export default function WeddingInvitationPage() {
       <DetailsSection />
       <ScratchCountdownSection />
       <EventsSection />
-      <RSVPSection />
-      <ComplimentsSection />
-      <ThankYouSection />
+      <div className="flowerSection">
+        <RSVPSection />
+        <ComplimentsSection />
+        <ThankYouSection />
+      </div>
     </main>
   );
 }

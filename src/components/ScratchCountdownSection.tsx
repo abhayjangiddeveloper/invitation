@@ -161,17 +161,16 @@ export default function ScratchCountdownSection() {
 
   return (
     <section className="scratch-section" id="scratchSection">
-      <div className="hero-bg-container">
+      <div className="scratch-bg-container">
         <video
-          // ref={videoRef}
+          autoPlay
           muted
+          loop
           playsInline
-          // onTimeUpdate={handleTimeUpdate}
-          // onEnded={() => setIsVideoEnded(true)}
-          className="hero-bg-image hero-bg-video"
+          className="scratch-bg-image scratch-bg-video"
           poster="/assets/bg-CjJQzhxh.jpg"
         >
-          <source src="/assets/curtain-video1.mp4" type="video/mp4" />
+          <source src="/assets/weds2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="hero-vignette" />

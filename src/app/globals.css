@@ -634,6 +634,17 @@ h1.hero-names-cursive {
   overflow: hidden;
 }
 
+.scratch-section .scratch-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  opacity: 1;
+}
+
 .scratch-section::before {
   content: "";
   position: absolute;
@@ -1357,6 +1368,14 @@ h1.hero-names-cursive {
   letter-spacing: 1px;
   color: var(--color-primary-dark);
   margin-top: 4px;
+}
+
+/* Flower Section */
+.flowerSection {
+  background-image: url("/assets/bg-CjJQzhxh.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Footer Section */
