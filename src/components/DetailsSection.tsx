@@ -63,7 +63,7 @@ export default function DetailsSection() {
         </div>
 
         {/* Hadith Section */}
-        <div className="hadith-card">
+        {/* <div className="hadith-card">
           <p className="arabic-text">
             عَنِ ابْنِ عَبَّاسٍ قَالَ: قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ
             عَلَيْهِ وَسَلَّمَ:
@@ -80,7 +80,7 @@ export default function DetailsSection() {
           </p>
 
           <p className="reference">— Sunan Ibn Majah 1847</p>
-        </div>
+        </div> */}
       </div>
     </section>
   );
