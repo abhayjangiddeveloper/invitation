@@ -209,9 +209,9 @@ export default function ScratchCountdownSection() {
                   opacity=".5"
                 ></path>
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M19 3.25C19.4142 3.25 19.75 3.58579 19.75 4V4.25H20C20.4142 4.25 20.75 4.58579 20.75 5C20.75 5.41421 20.4142 5.75 20 5.75H19.75V6C19.75 6.41421 19.4142 6.75 19 6.75C18.5858 6.75 18.25 6.41421 18.25 6V5.75H18C17.5858 5.75 17.25 5.41421 17.25 5C17.25 4.58579 17.5858 4.25 18 4.25H18.25V4C18.25 3.58579 18.5858 3.25 19 3.25Z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                   opacity=".5"
                 ></path>
               </g>

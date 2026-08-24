@@ -9,10 +9,10 @@ interface FamilyMember {
 
 const familyMembers: FamilyMember[] = [
   {
-    name: "Fakahruddin Quazi & Shamshad Begum",
+    name: "Fakhruddin Quazi & Shamshad Begum",
   },
   {
-    name: "Mominuddin Quazi & Parveen Begum",
+    name: "Moinuddin Quazi & Parveen Begum",
   },
   {
     name: "Aadil Quazi, all Quazi Family Sawar, all relatives & friends",

@@ -13,10 +13,10 @@ export default function EventsSection() {
       <div className="event-cards-container">
         {/* Card 1: Flower Carnival */}
         <div className="event-card">
-          <div className="event-badge"> 🌷 Flower Carnival</div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <div className="event-badge light"> 🌷 Flower Carnival</div>
+
           <img
-            src="/assets/masjid-CpSqpTFh.png"
+            src="/assets/flower.png"
             alt="Masjid-e-Ilahi"
             className="event-image"
           />
@@ -29,14 +29,6 @@ export default function EventsSection() {
           </p>
           <p className="event-venue-name">📍 {CARD_INFO?.resortLocation}</p>
           <p className="event-address">{CARD_INFO?.resortLandmark}</p>
-          {/* <a
-            href="https://www.google.com/maps/search/?api=1&query=Masjid-e-Ilahi+Shobha+Nagar+Nanded"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="map-btn"
-          >
-            <span>📍 View Location on Google Maps</span>
-          </a> */}
         </div>
 
         {/* Card 2: Barat */}
@@ -44,7 +36,7 @@ export default function EventsSection() {
           <div className="event-badge light">🎠 Barat Departure</div>
 
           <img
-            src="/assets/venue-DNGKp-8E.png"
+            src="/assets/bhai.jpeg"
             alt="Prince Lawns Function Hall"
             className="event-image"
           />
@@ -59,8 +51,15 @@ export default function EventsSection() {
         </div>
 
         {/* Card 3: Nikah */}
-        <div className="event-card dashed-border">
-          <div className="event-badge light">🕌 ✦ Nikah ✦</div>
+        <div className="event-card">
+          <div className="event-badge light">🕌 Nikah</div>
+
+          <img
+            src="/assets/masjid.png"
+            alt="Prince Lawns Function Hall"
+            className="event-image"
+          />
+
           <h3 className="event-date-text">
             {moment(CARD_INFO.baratDepartureDate).format("dddd, DD MMMM YYYY")}
           </h3>
@@ -70,8 +69,8 @@ export default function EventsSection() {
         </div>
 
         {/* Card 4: Mayra */}
-        <div className="event-card dashed-border">
-          <div className="event-badge light">👗 ✦ Mayra ✦</div>
+        <div className="event-card">
+          <div className="event-badge light">👗 Mayra</div>
           <h3 className="event-date-text">
             {moment(CARD_INFO.mayraDate).format("dddd, DD MMMM YYYY")}
           </h3>
@@ -81,8 +80,14 @@ export default function EventsSection() {
         </div>
 
         {/* Card 5: Reception & Dinner */}
-        <div className="event-card dashed-border">
-          <div className="event-badge light">🍱 ✦ Reception & Dinner ✦</div>
+        <div className="event-card">
+          <div className="event-badge light">🍱 Reception & Dinner</div>
+
+          <img
+            src="/assets/venue.png"
+            alt="Prince Lawns Function Hall"
+            className="event-image"
+          />
           <h3 className="event-date-text">
             {moment(CARD_INFO.receptionAndDinnerDate).format(
               "dddd, DD MMMM YYYY",
