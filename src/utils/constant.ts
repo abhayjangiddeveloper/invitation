@@ -5,7 +5,7 @@ export const CARD_INFO = {
   groomMother: "Shabana Begum",
   brideFather: "Firoz Pathan Sb.",
   brideMother: "Ruksana Begum",
-  nikahDate: "2026-10-11",
+  nikahDate: "2026-10-10",
   flowerCarnivalDate: "2026-10-09",
   flowerCarnivalTime: "5:00 PM",
   baratDepartureDate: "2026-10-10",
@@ -14,6 +14,6 @@ export const CARD_INFO = {
   mayraTime: "11:00 AM",
   receptionAndDinnerDate: "2026-10-11",
   receptionAndDinnerTime: "6:00 PM Onwards",
-  resortLocation: "Sundarm Resort",
-  resortLandmark: "Harni mahadev road, Bhilwara",
+  resortLocation: "Sundaram Resort",
+  resortLandmark: "Harni Mahadev road, Bhilwara",
 };

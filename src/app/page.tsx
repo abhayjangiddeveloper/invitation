@@ -80,7 +80,7 @@ export default function WeddingInvitationPage() {
       <EventsSection />
       <div className="flowerSection">
         <RSVPSection />
-        <ComplimentsSection />
+        {/* <ComplimentsSection /> */}
         <ThankYouSection />
       </div>
     </main>
