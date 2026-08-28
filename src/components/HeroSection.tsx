@@ -64,6 +64,11 @@ export default function HeroSection({ isOpen = false }: HeroSectionProps) {
           <source src="/assets/curtain-video1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        <img
+          src="/assets/hero-background.jpeg"
+          alt="Hero Background"
+          className={`hero-bg-image hero-bg-static ${isVideoEnded ? "revealed" : ""}`}
+        />
         <div className="hero-vignette" />
       </div>
 
