@@ -99,7 +99,7 @@ export default function EventsSection() {
           <p className="event-venue-name">📍 {CARD_INFO?.resortLocation}</p>
           <p className="event-address">{CARD_INFO?.resortLandmark}</p>
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Prince+Lawns+Function+Hall+Maltekdi+Nanded"
+            href="https://maps.app.goo.gl/gFkWoQ5HFfANq7FG6"
             target="_blank"
             rel="noopener noreferrer"
             className="map-btn-cream"
