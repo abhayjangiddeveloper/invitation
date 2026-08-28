@@ -288,6 +288,7 @@ h1.hero-names-cursive {
 
 .hero-ampersand.weds {
   font-size: 2rem;
+  color: white !important;
 }
 
 @media (max-width: 550px) {
