@@ -1,16 +1,15 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
-import IntroOverlay from "@/components/IntroOverlay";
-import MusicPlayer from "@/components/MusicPlayer";
+import DetailsSection from "@/components/DetailsSection";
+import EventsSection from "@/components/EventsSection";
 import HeartClickEffect from "@/components/HeartClickEffect";
 import HeroSection from "@/components/HeroSection";
-import DetailsSection from "@/components/DetailsSection";
-import ScratchCountdownSection from "@/components/ScratchCountdownSection";
-import EventsSection from "@/components/EventsSection";
+import IntroOverlay from "@/components/IntroOverlay";
+import MusicPlayer from "@/components/MusicPlayer";
 import RSVPSection from "@/components/RSVPSection";
-import ComplimentsSection from "@/components/ComplimentsSection";
+import ScratchCountdownSection from "@/components/ScratchCountdownSection";
 import ThankYouSection from "@/components/ThankYouSection";
+import { useEffect, useRef, useState } from "react";
 
 export default function WeddingInvitationPage() {
   const [isOpened, setIsOpened] = useState(false);
@@ -19,10 +18,11 @@ export default function WeddingInvitationPage() {
 
   useEffect(() => {
     // Create background audio instance
-    const audio = new Audio("/media/music2.mp3");
+    const audio = new Audio("/media/music.mp3");
     audio.loop = true;
     audio.preload = "auto";
     audioRef.current = audio;
+    // audio.volume = 0.3;
 
     return () => {
       audio.pause();

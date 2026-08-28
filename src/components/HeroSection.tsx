@@ -69,15 +69,7 @@ export default function HeroSection({ isOpen = false }: HeroSectionProps) {
 
       <div className={`hero-content ${isVideoEnded ? "revealed" : ""}`}>
         <h1 className="hero-names-cursive">{CARD_INFO.groomName}</h1>
-        {/* <span className="hero-ampersand">&amp;</span> */}
-        <span
-          className="hero-ampersand"
-          style={{
-            fontSize: "2rem !important",
-          }}
-        >
-          Weds
-        </span>
+        <span className="hero-ampersand weds">Weds</span>
         <h1 className="hero-names-cursive">{CARD_INFO.brideName}</h1>
 
         <img
